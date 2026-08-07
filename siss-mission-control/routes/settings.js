@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+const {
+    syncConfiguration
+} = require("../utils/merge");
+
 function requireLogin(req, res, next) {
     if (!req.session.user) {
         return res.redirect("/login");
@@ -9,30 +13,29 @@ function requireLogin(req, res, next) {
     next();
 }
 
-let settings = {
+const communicationConfig = {
     frequency: "8.4 GHz",
     bandwidth: "120 MHz",
     timeout: "5",
     protocol: "S-BAND"
 };
 
-// 설정 페이지
 router.get("/settings", requireLogin, (req, res) => {
     res.render("settings", {
-        settings,
+        settings: communicationConfig,
         message: null
     });
 });
 
-// 설정 변경
 router.post("/settings", requireLogin, (req, res) => {
-    settings.frequency = req.body.frequency;
-    settings.bandwidth = req.body.bandwidth;
-    settings.timeout = req.body.timeout;
-    settings.protocol = req.body.protocol;
+
+    syncConfiguration(
+        communicationConfig,
+        req.body
+    );
 
     res.render("settings", {
-        settings,
+        settings: communicationConfig,
         message: "Communication settings updated."
     });
 });
