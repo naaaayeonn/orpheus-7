@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SISS Mission Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div>
+            <strong>SISS</strong>
+            <span class="topbar-subtitle">
+                MISSION CONTROL
+            </span>
+        </div>
+
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/satellites">Satellites</a>
+            <a href="/settings">Communication</a>
+            <a href="/telemetry">Telemetry</a>
+            <a href="/logout">Logout</a>
+        </nav>
+
+    </header>
+
+    <main class="dashboard">
+
+        <div class="dashboard-title">
+
+            <div>
+                <p class="section-label">
+                    SISS CONTROL NETWORK
+                </p>
+
+                <h1>
+                    Mission Dashboard
+                </h1>
+
+                <p>
+                    Welcome, Operator
+                    <strong>
+                        <%= user.username %>
+                    </strong>
+                </p>
+            </div>
+
+            <div class="online-badge">
+                ● SYSTEM ONLINE
+            </div>
+
+        </div>
+
+        <section class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <p class="card-label">
+                    ACTIVE SATELLITES
+                </p>
+
+                <h2>5</h2>
+
+                <p class="card-description">
+                    Connected to SISS Network
+                </p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <p class="card-label">
+                    NETWORK STATUS
+                </p>
+
+                <h2>STABLE</h2>
+
+                <p class="card-description">
+                    All primary relays operational
+                </p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <p class="card-label">
+                    MISSION ALERTS
+                </p>
+
+                <h2>0</h2>
+
+                <p class="card-description">
+                    No critical alerts
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="mission-panel">
+
+            <h2>Recent Mission Logs</h2>
+
+            <div class="log-row">
+                <span>19:36:08</span>
+                <p>
+                    SISS-01 telemetry packet received.
+                </p>
+            </div>
+
+            <div class="log-row">
+                <span>19:34:21</span>
+                <p>
+                    ORION-4 communication channel stable.
+                </p>
+            </div>
+
+            <div class="log-row">
+                <span>19:31:54</span>
+                <p>
+                    LUNA-3 orbital correction completed.
+                </p>
+            </div>
+
+            <div class="log-row">
+                <span>19:28:12</span>
+                <p>
+                    ARES-2 entered standby mode.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

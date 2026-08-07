@@ -1,5 +1,5 @@
-const express = require("express");
-const session = require("express-session");
+const express = require("express"); //Express 서버 사용
+const session = require("express-session"); //로그인한 사용자를 기억하기 위한 세션
 const path = require("path");
 
 const app = express();
@@ -28,6 +28,10 @@ app.use(
 // 로그인 관련 라우터 연결
 const authRouter = require("./routes/auth");
 app.use("/", authRouter);
+
+ // 대시보드 라우터 연결
+const dashboardRouter = require("./routes/dashboard");
+app.use("/", dashboardRouter);
 
 // 서버 실행
 app.listen(PORT, () => {
