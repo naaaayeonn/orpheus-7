@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SISS Mission Control</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <div class="system-name">
+            SISS
+        </div>
+
+        <h1>
+            Mission Control
+        </h1>
+
+        <p class="description">
+            Satellite Intelligence Security System
+        </p>
+
+        <div class="status">
+            SYSTEM STATUS :
+            <span>ONLINE</span>
+        </div>
+        
+        <!--사용자가 PW를 입력하면 POST/login으로 전송-->
+        <form
+            action="/login"
+            method="POST"
+        > 
+
+            <label>
+                Operator ID
+            </label>
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Operator ID"
+                required
+            >
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <% if(error){ %>
+
+                <p class="error">
+
+                    <%= error %>
+
+                </p>
+
+            <% } %>
+
+            <button>
+
+                ACCESS SYSTEM
+
+            </button>
+
+        </form>
+
+        <div class="warning">
+
+            AUTHORIZED PERSONNEL ONLY
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
