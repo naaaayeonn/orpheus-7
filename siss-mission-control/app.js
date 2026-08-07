@@ -45,6 +45,8 @@ app.use("/", settingsRouter);
 const telemetryRouter = require("./routes/telemetry");
 app.use("/", telemetryRouter);
 
+const adminRouter = require("./routes/admin");
+app.use("/", adminRouter);
 // 서버 실행
 app.listen(PORT, () => {
     console.log(
