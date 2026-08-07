@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Satellite Network</title>
+
+<link rel="stylesheet"
+href="/css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div>
+
+<strong>SISS</strong>
+
+<span class="topbar-subtitle">
+
+MISSION CONTROL
+
+</span>
+
+</div>
+
+<nav>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/satellites">Satellites</a>
+
+<a href="/settings">Communication</a>
+
+<a href="/telemetry">Telemetry</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+</header>
+
+<main class="dashboard">
+
+<h1>Satellite Network</h1>
+
+<div class="dashboard-cards">
+
+<% satellites.forEach(s=>{ %>
+
+<div class="dashboard-card">
+
+<h2><%= s.name %></h2>
+
+<p>Status : <%= s.status %></p>
+
+<p>Orbit : <%= s.orbit %></p>
+
+<p>Signal : <%= s.signal %></p>
+
+<br>
+
+<a href="/satellite/<%= s.id %>">
+
+View Detail →
+
+</a>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</main>
+
+</body>
+
+</html>

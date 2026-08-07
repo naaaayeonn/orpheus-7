@@ -33,6 +33,10 @@ app.use("/", authRouter);
 const dashboardRouter = require("./routes/dashboard");
 app.use("/", dashboardRouter);
 
+// 위성 관련 라우터 연결
+const satelliteRouter = require("./routes/satellite");
+app.use("/", satelliteRouter);
+
 // 서버 실행
 app.listen(PORT, () => {
     console.log(

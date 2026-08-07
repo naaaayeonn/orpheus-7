@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Satellite Detail</title>
+
+<link rel="stylesheet"
+href="/css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div>
+
+<strong>SISS</strong>
+
+<span class="topbar-subtitle">
+
+MISSION CONTROL
+
+</span>
+
+</div>
+
+<nav>
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/satellites">Satellites</a>
+
+<a href="/logout">Logout</a>
+
+</nav>
+
+</header>
+
+<main class="dashboard">
+
+<h1>
+
+<%= satellite.name %>
+
+</h1>
+
+<div class="mission-panel">
+
+<p>
+
+Orbit :
+
+<strong>
+
+<%= satellite.orbit %>
+
+</strong>
+
+</p>
+
+<p>
+
+Status :
+
+<strong>
+
+<%= satellite.status %>
+
+</strong>
+
+</p>
+
+<p>
+
+Signal :
+
+<strong>
+
+<%= satellite.signal %>
+
+</strong>
+
+</p>
+
+<hr>
+
+<p>
+
+Communication Channel :
+
+NORMAL
+
+</p>
+
+<p>
+
+Telemetry :
+
+READY
+
+</p>
+
+</div>
+
+</main>
+
+</body>
+
+</html>
