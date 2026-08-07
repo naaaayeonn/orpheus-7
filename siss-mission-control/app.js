@@ -37,6 +37,9 @@ app.use("/", dashboardRouter);
 const satelliteRouter = require("./routes/satellite");
 app.use("/", satelliteRouter);
 
+const settingsRouter = require("./routes/settings");
+app.use("/", settingsRouter);
+
 // 서버 실행
 app.listen(PORT, () => {
     console.log(

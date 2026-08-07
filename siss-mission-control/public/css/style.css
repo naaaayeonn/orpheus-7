@@ -260,3 +260,25 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.settings-form {
+    max-width: 600px;
+}
+
+.settings-form select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #31486c;
+    border-radius: 6px;
+    background: #101b30;
+    color: white;
+}
+
+.success-message {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #2e5a47;
+    color: #7fffb2;
+    background: #0b1d19;
+    font-size: 13px;
+}

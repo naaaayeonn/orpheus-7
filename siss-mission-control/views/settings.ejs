@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Communication Settings</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div>
+        <strong>SISS</strong>
+
+        <span class="topbar-subtitle">
+            MISSION CONTROL
+        </span>
+    </div>
+
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/satellites">Satellites</a>
+        <a href="/settings">Communication</a>
+        <a href="/telemetry">Telemetry</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+</header>
+
+<main class="dashboard">
+
+    <p class="section-label">
+        COMMUNICATION NETWORK
+    </p>
+
+    <h1>Communication Settings</h1>
+
+    <p class="card-description">
+        Configure satellite communication parameters.
+    </p>
+
+    <section class="mission-panel">
+
+        <% if (message) { %>
+            <div class="success-message">
+                <%= message %>
+            </div>
+        <% } %>
+
+        <form
+            method="POST"
+            action="/settings"
+            class="settings-form"
+        >
+
+            <label>Frequency</label>
+
+            <input
+                type="text"
+                name="frequency"
+                value="<%= settings.frequency %>"
+                required
+            >
+
+            <label>Bandwidth</label>
+
+            <input
+                type="text"
+                name="bandwidth"
+                value="<%= settings.bandwidth %>"
+                required
+            >
+
+            <label>Timeout</label>
+
+            <input
+                type="number"
+                name="timeout"
+                value="<%= settings.timeout %>"
+                required
+            >
+
+            <label>Protocol</label>
+
+            <select name="protocol">
+
+                <option
+                    value="S-BAND"
+                    <%= settings.protocol === "S-BAND" ? "selected" : "" %>
+                >
+                    S-BAND
+                </option>
+
+                <option
+                    value="X-BAND"
+                    <%= settings.protocol === "X-BAND" ? "selected" : "" %>
+                >
+                    X-BAND
+                </option>
+
+                <option
+                    value="KA-BAND"
+                    <%= settings.protocol === "KA-BAND" ? "selected" : "" %>
+                >
+                    KA-BAND
+                </option>
+
+            </select>
+
+            <button type="submit">
+                UPDATE COMMUNICATION SETTINGS
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+</body>
+</html>
