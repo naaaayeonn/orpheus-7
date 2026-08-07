@@ -282,3 +282,33 @@ button:hover {
     background: #0b1d19;
     font-size: 13px;
 }
+
+.telemetry-panel {
+    margin-top: 25px;
+}
+
+.telemetry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.telemetry-item {
+    padding: 20px;
+    background: #101b30;
+    border: 1px solid #263551;
+    border-radius: 6px;
+}
+
+.telemetry-item span {
+    display: block;
+    margin-bottom: 8px;
+    color: #8291ae;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.telemetry-item strong {
+    font-size: 20px;
+}

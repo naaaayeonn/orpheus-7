@@ -37,8 +37,13 @@ app.use("/", dashboardRouter);
 const satelliteRouter = require("./routes/satellite");
 app.use("/", satelliteRouter);
 
+// 설정 관련 라우터 연결
 const settingsRouter = require("./routes/settings");
 app.use("/", settingsRouter);
+
+// 텔레메트리 관련 라우터 연결
+const telemetryRouter = require("./routes/telemetry");
+app.use("/", telemetryRouter);
 
 // 서버 실행
 app.listen(PORT, () => {
