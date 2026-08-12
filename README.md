@@ -1,6 +1,6 @@
 # 🚀 ORPHEUS-7 : Space Mission Control
 
-> **Prototype Pollution과 SSRF(Server-Side Request Forgery)를 활용한 웹해킹 CTF 문제 제작 프로젝트**
+> **Prototype Pollution과 SSRF(Server-Side Request Forgery)를 활용한 웹해킹 CTF 문제 제작 **
 
 ---
 
