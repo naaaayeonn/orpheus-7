@@ -42,8 +42,7 @@ app.get("/internal/logs", internalOnly, (req, res) => {
             { timestamp: "2025-03-01T04:20:00Z", event: "ORPHEUS-7 data locked to internal access only" },
             { timestamp: "2025-03-02T09:00:00Z", event: "Routine diagnostics passed" },
             { timestamp: "2025-03-03T11:34:00Z", event: "WARNING: Unauthorized access attempt from external node" }
-        ],
-        note: "Full mission log access requires SECRET clearance. See /internal/secret"
+        ]
     });
 });
 
@@ -70,11 +69,6 @@ app.get("/internal/secret", internalOnly, (req, res) => {
 app.use((req, res) => {
     res.status(404).json({
         error: "NOT FOUND",
-        available_endpoints: [
-            "/internal/status",
-            "/internal/logs",
-            "/internal/secret"
-        ]
     });
 });
 
