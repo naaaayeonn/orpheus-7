@@ -4,25 +4,9 @@ const PORT = 4000;
 
 app.use(express.json());
 
-// 내부 접근만 허용 미들웨어
-function internalOnly(req, res, next) {
-    const ip = req.ip || req.connection.remoteAddress;
-
-    // localhost(IPv4, IPv6) 이외의 접근 차단
-    const allowed = ["127.0.0.1", "::1", "::ffff:127.0.0.1"];
-
-    if (!allowed.includes(ip)) {
-        return res.status(403).json({
-            error: "ACCESS DENIED",
-            message: "This endpoint is restricted to internal networks only."
-        });
-    }
-
-    next();
-}
 
 // /internal/status - 내부 시스템 상태
-app.get("/internal/status", internalOnly, (req, res) => {
+app.get("/internal/status", (req, res) => {
     res.json({
         system: "MISSION CORE",
         status: "OPERATIONAL",
@@ -34,7 +18,7 @@ app.get("/internal/status", internalOnly, (req, res) => {
 });
 
 // /internal/logs - 미션 로그
-app.get("/internal/logs", internalOnly, (req, res) => {
+app.get("/internal/logs", (req, res) => {
     res.json({
         logs: [
             { timestamp: "2025-03-01T04:12:00Z", event: "ORPHEUS-7 signal detected on frequency 9.6 GHz" },
@@ -47,7 +31,7 @@ app.get("/internal/logs", internalOnly, (req, res) => {
 });
 
 // /internal/secret - ORPHEUS-7 기밀 정보 + FLAG
-app.get("/internal/secret", internalOnly, (req, res) => {
+app.get("/internal/secret", (req, res) => {
     res.json({
         classification: "TOP SECRET",
         asset: "ORPHEUS-7",
@@ -72,7 +56,7 @@ app.use((req, res) => {
     });
 });
 
-app.listen(PORT, "127.0.0.1", () => {
-    console.log(`[MISSION CORE] Internal server running on http://127.0.0.1:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`[MISSION CORE] Internal server running on http://0.0.0.0:${PORT}`);
     console.log(`[MISSION CORE] External access is BLOCKED.`);
 });
