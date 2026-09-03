@@ -120,7 +120,7 @@ POST /telemetry
 Internal Mission Core 접근
       │
       ▼
-FLAG 🚩
+FLAG 
 ```
 
 ---
@@ -191,7 +191,7 @@ FLAG{ORPHEUS_7_Y0U_R3ACH3D_THE_C0RE}
 
 ---
 
-# 🛠️ 개발 환경
+# 개발 환경
 
 ### Backend
 * Node.js
