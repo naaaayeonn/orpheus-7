@@ -1,0 +1,22 @@
+version: "3.8"
+ 
+services:
+ 
+  siss-mission-control:
+    build: ./siss-mission-control
+    ports:
+      - "3000:3000"
+    networks:
+      - mission-net
+    depends_on:
+      - mission-core
+ 
+  mission-core:
+    build: ./mission-core
+    networks:
+      - mission-net
+    # 포트를 외부에 노출하지 않음 → 직접 접근 불가
+ 
+networks:
+  mission-net:
+    driver: bridge

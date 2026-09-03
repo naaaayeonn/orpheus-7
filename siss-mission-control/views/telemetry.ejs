@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemetry Monitor</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div>
+        <strong>SISS</strong>
+        <span class="topbar-subtitle">MISSION CONTROL</span>
+    </div>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/satellites">Satellites</a>
+        <a href="/settings">Communication</a>
+        <a href="/telemetry">Telemetry</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<main class="dashboard">
+
+    <p class="section-label">SATELLITE TELEMETRY NETWORK</p>
+    <h1>Telemetry Monitor</h1>
+    <p class="card-description">Retrieve current telemetry data from active satellites.</p>
+
+    <section class="mission-panel">
+        <form method="POST" action="/telemetry" class="settings-form">
+            <label>Select Satellite</label>
+            <select name="satellite" required>
+                <option value="SISS-01">SISS-01</option>
+                <option value="ORION-4">ORION-4</option>
+                <option value="LUNA-3">LUNA-3</option>
+            </select>
+            <button type="submit">CHECK TELEMETRY</button>
+        </form>
+    </section>
+
+    <% if (result) { %>
+
+        <section class="mission-panel telemetry-panel">
+
+            <h2><%= result.satellite %></h2>
+
+            <% if (result.temperature || result.battery || result.signal) { %>
+                <div class="telemetry-grid">
+                    <div class="telemetry-item">
+                        <span>TEMPERATURE</span>
+                        <strong><%= result.temperature %></strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <span>BATTERY</span>
+                        <strong><%= result.battery %></strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <span>SIGNAL</span>
+                        <strong><%= result.signal %></strong>
+                    </div>
+                </div>
+            <% } %>
+
+            <% if (result.flag) { %>
+                <div class="telemetry-grid">
+                    <div class="telemetry-item">
+                        <span>CLASSIFICATION</span>
+                        <strong><%= result.classification %></strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <span>MISSION STATUS</span>
+                        <strong><%= result.mission_status %></strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <span>FLAG</span>
+                        <strong><%= result.flag %></strong>
+                    </div>
+                </div>
+            <% } %>
+
+        </section>
+
+    <% } %>
+
+</main>
+
+</body>
+</html>
