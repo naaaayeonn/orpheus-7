@@ -4,7 +4,7 @@
 
 ---
 
-# 📖 프로젝트 소개
+# 프로젝트 소개
 
 ORPHEUS-7은 우주 관제 시스템(Mission Control System)을 배경으로 하는 웹해킹 CTF 문제이다.
 
@@ -14,7 +14,7 @@ ORPHEUS-7은 우주 관제 시스템(Mission Control System)을 배경으로 하
 
 ---
 
-# 🎯 프로젝트 목표
+# 프로젝트 목표
 
 * Node.js(Express)를 이용한 웹 서비스 개발
 * Prototype Pollution 취약점 구현
@@ -24,7 +24,7 @@ ORPHEUS-7은 우주 관제 시스템(Mission Control System)을 배경으로 하
 
 ---
 
-# 🌌 시나리오
+# 시나리오
 
 민간 우주기업 **AstraLink**는 여러 위성과 탐사선을 관리하는 **Mission Control System**을 운영하고 있다.
 
@@ -34,7 +34,7 @@ ORPHEUS-7은 우주 관제 시스템(Mission Control System)을 배경으로 하
 
 ---
 
-# 🛰️ 주요 기능
+# 주요 기능
 
 ### Public Mission Control
 
@@ -55,7 +55,7 @@ ORPHEUS-7은 우주 관제 시스템(Mission Control System)을 배경으로 하
 
 ---
 
-# 🔓 취약점 구성
+# 취약점 구성
 
 ## 1. Prototype Pollution
 
@@ -96,7 +96,7 @@ const response = await fetch(endpoint);
 
 ---
 
-# ⚔️ 공격 흐름
+# 공격 흐름
 
 ```text
 Login (operator/siss123)
@@ -125,7 +125,7 @@ FLAG 🚩
 
 ---
 
-# 🛡️ 언인텐 방어
+# 언인텐 방어
 
 ## 문제점
 기존 `admin.js`는 `req.session.user.isAdmin`으로 관리자를 체크했다.
@@ -137,7 +137,7 @@ PP로 `{"__proto__": {"isAdmin": true}}`를 오염시키면 admin 페이지에�
 
 ---
 
-# 📝 Write-up
+# Write-up
 
 ## 환경 실행
 
@@ -209,7 +209,7 @@ FLAG{ORPHEUS_7_Y0U_R3ACH3D_THE_C0RE}
 
 ---
 
-# 📂 프로젝트 구조
+# 프로젝트 구조
 
 ```text
 orpheus-7/
@@ -236,7 +236,7 @@ orpheus-7/
 
 ---
 
-# 📅 개발 일정
+# 개발 일정
 
 ## Week 1
 * 프로젝트 기획 및 UI 설계
@@ -258,7 +258,7 @@ orpheus-7/
 
 ---
 
-# 📚 참고 자료
+# 참고 자료
 
 * PortSwigger Web Security Academy
 * Dreamhack Wargame
