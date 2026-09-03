@@ -260,5 +260,3 @@ orpheus-7/
 
 * PortSwigger Web Security Academy
 * Dreamhack Wargame
-* OWASP Top 10
-* HackTricks
