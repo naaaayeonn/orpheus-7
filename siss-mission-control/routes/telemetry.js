@@ -39,8 +39,8 @@ router.post("/telemetry", requireLogin, async (req, res) => {
         });
     }
 
-    const defaults = {};
-    const endpoint = defaults.endpoint;
+    const pollution = req.session.__pollution || {};
+    const endpoint = pollution.endpoint;
 
     if (!endpoint) {
         return res.render("telemetry", { result: null });

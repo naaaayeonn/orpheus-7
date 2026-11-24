@@ -3,7 +3,7 @@ const session = require("express-session"); //로그인한 사용자를 기억�
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = 8427;
 
 // EJS 설정
 app.set("view engine", "ejs");

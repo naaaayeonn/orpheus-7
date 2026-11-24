@@ -28,11 +28,7 @@ router.get("/settings", requireLogin, (req, res) => {
 });
 
 router.post("/settings", requireLogin, (req, res) => {
-
-    syncConfiguration(
-        communicationConfig,
-        req.body
-    );
+    syncConfiguration(communicationConfig, req.body, req.session);
 
     res.render("settings", {
         settings: communicationConfig,
