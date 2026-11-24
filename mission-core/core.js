@@ -45,7 +45,7 @@ app.get("/internal/secret", (req, res) => {
         },
         mission_status: "ACTIVE — UNACKNOWLEDGED",
         notes: "ORPHEUS-7 does not appear in any registered satellite registry. Signal origin cannot be traced. Handle with extreme caution.",
-        flag: "FLAG{ORPHEUS_7_Y0U_R3ACH3D_THE_C0RE}"
+        flag: "WUISP{ORPHEUS_7_Y0U_R3ACH3D_THE_C0RE}"
     });
 });
 
