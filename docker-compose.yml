@@ -5,7 +5,7 @@ services:
   siss-mission-control:
     build: ./siss-mission-control
     ports:
-      - "3000:3000"
+      - "8427:8427"
     networks:
       - mission-net
     depends_on:
